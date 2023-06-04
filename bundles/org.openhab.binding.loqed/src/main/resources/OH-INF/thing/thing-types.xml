@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="loqed"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- LOQED Bridge (Bridge Type) -->
+	<bridge-type id="bridge">
+		<label>LOQED Bridge</label>
+		<description>This bridge represents a LOQED Bridge on your local network. LOQED Locks have to be paired via
+			Bluetooth
+			with it.</description>
+		<properties>
+			<property name="bridgeId"/>
+		</properties>
+		<config-description>
+			<parameter name="ip" type="text" required="true">
+				<label>IP Address</label>
+				<context>network-address</context>
+				<description>The IP address of the LOQED Bridge. Look it up on your router. It is recommended to set a static IP
+					address lease for the LOQED Bridge (and for your openHAB server too) on your router.</description>
+			</parameter>
+			<parameter name="key" type="text" required="true">
+				<label>Key</label>
+				<description>This is the Key of app.loqed.com/API-Config</description>
+				<context>password</context>
+			</parameter>
+			<parameter name="apiToken" type="text" required="true">
+				<label>API Token</label>
+				<context>password</context>
+				<description>This is the ApiToken of app.loqed.com/API-Config</description>
+			</parameter>
+		</config-description>
+	</bridge-type>
+</thing:thing-descriptions>
